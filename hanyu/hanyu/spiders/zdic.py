@@ -83,7 +83,7 @@ class ZdicSpider(scrapy.Spider):
 
         # 词语释义
         item['chinese_mean'] = response.xpath("//div[@class='gycd-item']/li/p/span[1]/text()")[0].extract().strip()  if response.xpath(
-            "//div[@class='gycd-item']/li/p/span[1]/t") else ' '
+            "//div[@class='gycd-item']/li/p/span[1]") else ' '
 
         # 词语举例
         item['eg'] = response.xpath("//div[@class='gycd-item']/li/p/span[2]/text()")[0].extract().strip()  if response.xpath(
